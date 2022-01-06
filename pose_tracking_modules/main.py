@@ -14,12 +14,12 @@ def main():
         image = detector.find_pose(image)
         landmark_list = detector.find_position(image)
         if len(landmark_list) != 0:
-            print(landmark_list[0])
+            print(landmark_list)
 
         current_time = time.time()
         fps = 1 / (current_time - previous_time)
         previous_time = current_time
-        cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (50, 0, 255), 1)
+        cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1)
         cv2.imshow("Image", image)
         cv2.waitKey(1)
 
