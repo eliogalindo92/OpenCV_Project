@@ -4,7 +4,6 @@ import face_mesh as pt
 
 
 def main():
-    current_time = 0
     previous_time = 0
     cap = cv2.VideoCapture(0)
     detector = pt.FaceMeshDetector()
@@ -18,7 +17,11 @@ def main():
         current_time = time.time()
         fps = 1 / (current_time - previous_time)
         previous_time = current_time
-        cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1)
+        cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
+        if fps > 30:
+            cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1)
+        else:
+            cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 1)
         cv2.imshow("Image", image)
         cv2.waitKey(1)
 

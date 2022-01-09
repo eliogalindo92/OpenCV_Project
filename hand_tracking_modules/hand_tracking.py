@@ -33,6 +33,6 @@ class HandTracker:
                 coordinate_x, coordinate_y = int(landmark.x * width), int(landmark.y * height)
                 landmark_list.append([identifier, coordinate_x, coordinate_y])
                 if draw:
-                    cv2.circle(image, (coordinate_x, coordinate_y), 10, (255, 0, 0), cv2.FILLED)
+                    cv2.circle(image, (coordinate_x, coordinate_y), 8, (0, 255, 0), cv2.FILLED)
 
         return landmark_list
