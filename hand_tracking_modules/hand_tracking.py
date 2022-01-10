@@ -4,11 +4,7 @@ import mediapipe as mp
 
 class HandTracker:
 
-    def __init__(self, mode=False, max_hands=2, detection_confidence=0.5, track_confidence=0.5):
-        self.mode = mode
-        self.max_hands = max_hands
-        self.detection_confidence = detection_confidence
-        self.track_confidence = track_confidence
+    def __init__(self):
         self.mp_hands = mp.solutions.hands
         self.hands = self.mp_hands.Hands()
         self.mp_draw = mp.solutions.drawing_utils

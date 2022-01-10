@@ -4,11 +4,7 @@ import mediapipe as mp
 
 class FaceMeshDetector:
 
-    def __init__(self, static_mode=False, max_faces=1, tracking_confidence=0.5, detection_confidence=0.5):
-        self.static_mode = static_mode
-        self.max_faces = max_faces
-        self.tracking_confidence = tracking_confidence
-        self.detection_confidence = detection_confidence
+    def __init__(self):
         self.mp_face_mesh = mp.solutions.face_mesh
         self.face_mesh = self.mp_face_mesh.FaceMesh()
         self.mp_draw = mp.solutions.drawing_utils

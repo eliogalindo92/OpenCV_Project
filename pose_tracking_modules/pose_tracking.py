@@ -4,12 +4,7 @@ import mediapipe as mp
 
 class PoseTracker:
 
-    def __init__(self, mode=False, upBody=False, smooth=True, detection_confidence=0.5, track_confidence=0.5):
-        self.mode = mode
-        self.upBody = upBody
-        self.smooth = smooth
-        self.detection_confidence = detection_confidence
-        self.track_confidence = track_confidence
+    def __init__(self):
         self.mp_pose = mp.solutions.pose
         self.pose = self.mp_pose.Pose()
         self.mp_draw = mp.solutions.drawing_utils
