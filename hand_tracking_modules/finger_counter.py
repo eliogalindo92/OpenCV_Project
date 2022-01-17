@@ -7,7 +7,10 @@ def main():
     previous_time = 0
     cap = cv2.VideoCapture(0)
     detector = ht.HandTracker()
+
+    # Fingertip ids for each hand
     tips_id = [4, 8, 12, 16, 20]
+
     while True:
         success, image = cap.read()
         image = detector.find_hands(image)
@@ -41,6 +44,7 @@ def main():
             else:
                 cv2.putText(image, str(finger_number), (150, 82), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
+        # Counter method for the left-hand
         def left_hand_counter():
             # Left thumb
             left_hand_fingers = []
