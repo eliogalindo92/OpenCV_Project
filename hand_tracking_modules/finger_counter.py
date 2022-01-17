@@ -71,7 +71,8 @@ def main():
         else:
             cv2.putText(image, f"FPS:{str(int(fps))}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 1)
         cv2.imshow("Image", image)
-        cv2.waitKey(1)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
 
 if __name__ == "__main__":

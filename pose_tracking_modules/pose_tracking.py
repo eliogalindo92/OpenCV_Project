@@ -5,6 +5,7 @@ import mediapipe as mp
 class PoseTracker:
 
     def __init__(self):
+        self.results = None
         self.mp_pose = mp.solutions.pose
         self.pose = self.mp_pose.Pose()
         self.mp_draw = mp.solutions.drawing_utils

@@ -5,6 +5,7 @@ import mediapipe as mp
 class FaceDetector:
 
     def __init__(self):
+        self.results = None
         self.mp_face_detection = mp.solutions.face_detection
         self.face_detection = self.mp_face_detection.FaceDetection()
         self.mp_draw = mp.solutions.drawing_utils
